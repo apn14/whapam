@@ -1,0 +1,17 @@
+import os
+from scipy.io.wavfile import read
+
+# Path to the folder containing .wav files
+WAV_FOLDER = r"C:\Audio_Recorder_Detector\output_wav_folder"
+
+# Iterate through all files in the directory
+for filename in os.listdir(WAV_FOLDER):
+    if filename.endswith('.wav'):
+        file_path = os.path.join(WAV_FOLDER, filename)
+        
+        # Read the wav file
+        try:
+            sample_rate, _ = read(file_path)
+            print(f"File: {filename} | Sampling Frequency: {sample_rate} Hz")
+        except Exception as e:
+            print(f"Error reading {filename}: {e}")

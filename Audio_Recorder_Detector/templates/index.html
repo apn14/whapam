@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WHAPAM</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #4A90E2, #FFFFFF);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .spacer {
+            padding: 5vh;
+
+        }
+        h1 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        form {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        input[type="file"] {
+            margin: 10px 0;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.9);
+            color: #4A90E2;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            background-color: #4A90E2;
+            color: white;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        button:hover {
+            background-color: #357ABD;
+        }
+        .action-btn {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <form action="/record" method="post">
+            <h1>Record Audio</h1>
+            <button type="submit" class="action-btn">Start Recording</button>
+        </form>
+        <div class="spacer"></div>
+        <form action="/match" method="post" enctype="multipart/form-data">
+            <h1>Upload a .wav File</h1>
+            <input type="file" name="file" accept=".wav">
+            <button type="submit">Upload and Match</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Match Results</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+        
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', Arial, sans-serif;
+            background: linear-gradient(135deg, #4A90E2, #FFFFFF);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        h1, h2, h3 {
+            text-align: center;
+            margin: 10px 0;
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color:#357ABD
+        }
+        h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        ul {
+            list-style-type: disc;
+            padding: 0;
+            margin: 20px 0;
+            text-align: left;
+        }
+        li {
+            margin: 5px 0;
+            padding: 10px 0;
+            font-size: 1.2rem;
+            color: #4A90E2; /* Darker text for items */
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* Line separator */
+        }
+        li:last-child {
+            border-bottom: none; /* Remove line after the last item */
+        }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            text-decoration: none;
+            color: white;
+            background-color: #4A90E2;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+        a:hover {
+            background-color: #357ABD;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            max-width: 500px;
+            width: 90%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Match Results</h1>
+        <h2>Predicted Audio: {{ results.predicted_song }}</h2>
+        <!-- <h3>Match Scores:</h3>
+        <ul>
+            {% for song, score in results.match_scores.items() %}
+            <li>{{ song }}: {{ score }}</li>
+            {% endfor %}
+        </ul> -->
+        <a href="/">Try Another File</a>
+    </div>
+</body>
+</html>
